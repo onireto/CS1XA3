@@ -433,3 +433,118 @@ ls
 cd CS1XA3/CS1XA3/public_html/assets/
 ls
 exit
+cd CS1
+cd CS1XA3/
+git config --global user.name "onireto"
+git config --global user.email onireto@mcmaster.ca
+git add -A
+git commit -m "Initialized Repo"
+git push origin master
+git push onireto master
+git push CS1XA3 master
+git remote -v
+git remote
+git push
+git remote add origin git@github.com:onireto/CS1XA3.git
+git remote -v
+git push origin master
+git log
+git status
+git add -A 
+git commit -m "Intialized Repo"
+git push origin master
+git push git@github.com:onireto/CS1XA3.git
+git status
+ls
+cd ..
+git add -A
+git commit -m "Intialized Repo"
+git push origin master
+git remote rm origin
+git remote add origin https://github.com/onireto/CS1XA3.git
+git push origin master
+cd CS1XA3/
+git push origin master
+git pull origin
+ls
+git push origin master
+ls
+git checkout master
+git merge master
+git push origin master
+git push -f origin master
+git rm -r onireto_csv
+cd 
+ls
+git rm onireto_csv/
+git rm -r onireto_csv/
+git commit -m "remove"
+git push origin master
+git rm -r CS1XA3/CS1XA3/
+git rm -r somedir/
+fit rm somedor/
+git rm -r somedor/
+git rm -r temp
+git rm CSVAnswers/
+git rm -r CSVAnswers/
+git commit -m "remove all"
+git push origin master
+ls
+cd MARKS
+nano MARKS
+ls
+cd CS1XA3/
+ls
+cd
+git rm -r CS1XA3
+rm -r CS1XA3
+ls
+cd CS1XA3/
+ls
+CS1XA3/
+cd CS1XA3/
+ls
+mkdir private
+mkdir public_html
+touch set_permissions.sh
+touch README.md
+cd public_html/
+mkdir assets
+touch sample_img.jpg
+rm sample_img.jpg 
+cd assets/
+touch sample_img.jpg
+cd ..
+touch index.html
+cd..
+cd ..
+cd private/
+touch notes.txt
+cd ..
+cd public_html/
+ls
+nano index.html 
+exit
+ls
+git add CS1XA3/CS1XA3/
+git commit -m "Intialized Repo"
+git push origin master
+git push -f origin master
+git rm -r CS1XA3/CS1XA3/
+git commit remove
+git commit -m "remove"
+git push origin master
+ls
+cd CS1XA3/
+ls
+touch README.md
+mkdir public_html
+mkdir private
+touch set_permissions.sh
+cd public_html/
+touch index.html
+mkdir assets
+cd ..
+cd private/
+touch notes.txt
+exit
