@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html,button, body, h1, h2, h3, h4, h5 {font-family: "Optima", sans-serif}
+h1 {color: #141439;}
+h3 {color: #19334d;}
+h2 {color: #3d6999;}
+p {color: #538cc6;}
+ul{color: #8c8cd9;}
+button{color: #3d6999;}
+
+/* Reference this tabs from https://www.w3schools.com/howto/howto_js_tabs.asp */
+.tab {
+  overflow: hidden;
+  border: 1px solid #00d0d0;
+  background-color: #00d0d0;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+ text-align: center;
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  -webkit-animation: fadeEffect 1s;
+  animation: fadeEffect 1s;
+}
+
+/* Fade in tabs */
+@-webkit-keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+</style>
+<title> Tobi Onireti </title>
+<h1 align="center"; style = 'font-size: 100px' style > TOBI ONIRETI </h1>
+<p align="center"> <img src = "email.png" alt ="Email: " style="width:15px; height:12px"> <a href="mailto:tobionireti@gmail.com"> tobionireti@gmail.com </a><br>
+   Phone : 647-705-4732 <br>
+   <a href="https://www.linkedin.com/in/tobi-onireti-3b859a13b"> <img src = "linkedin.png" alt="linkedin" style="width:30px;height: 30px"> </a> <br>
+</p>
+<h2 align="center"; style ='color: #3d6999'>ABOUT ME</h2>
+<ul style="color: white">
+ 	<li> Enrolled in final year of the Computer Science Co-op program at McMaster University </li>
+	<li> Profound knowledge in developing software test plans and software tool operation instructions through working as a Software Validation Technician at ITC Systems </li>
+	<li> Excellent verbal and written communication skills developed as a Client Relations Advisor at CARSTAR </li>
+	<li> Strong problem solving skills established through working as a IT Technician at Mothercraft </li>
+</ul>
+
+
+
+</head>
+<body style="background-color: #00d0d0;">
+<div class = "tab">
+	<button class = "tablinks"
+	onclick="openOption(event, 'EDUCATION')"> EDUCATION </button>
+	<button class = "tablinks" onclick="openOption(event,'Work Experience')"> Work Experience</button>
+	<button class = "tablinks" onclick="openOption(event,'Volunteer Experience')">Volunteer Experience </button>
+
+</div>
+
+<div id = "EDUCATION" class = "tabcontent" style= "background-color: white" >
+<h1 align="center"> EDUCATION </h1>
+
+
+<h2 style = 'color: #338099'> Bachelor of Applied Science (Computer Science) </h2>
+<h3> Expected Graduation June 2019 </h3>
+<p>McMaster University, Hamilton, ON </p>
+
+<h2> Relevant Coursework/Project </h2>
+<h3> Software Development Application Project </h3>
+<ul>
+	<li> Designed, planned and created a birth control tracker application for IOS and Android using C++ and Microsoft SQL while communicating effectively in a team of 4 members </li>
+	<li> Applied knowledge of the software development life cycle and data structures to create application with seamless running time and effectiveness </li>
+</ul>
+
+<h3> Mothercraft Company Database </h3>
+<ul>
+	<li>Worked independently to create Company Desktop Application that organized the company’s directory for IT staff and higher management </li>
+	<li> Designed Android application using Java and Microsoft SQL </li>
+</ul>
+&nbsp 
+<h1 align="center">SKILLS & ABILITIES </h1>
+<ul> 
+	<li> Programming Languages: Java, Python, C++/C,C#, .NETFramework, Elm, Assembly language, Haskell </li>
+	<li> Web Knowledge:  HTML, CSS </li>
+	<li> Office Applications: MS Word, MS Outlook, MS Excel, MS Powerpoint, LaTeX, Photoshop </li>
+	<li> Operating Systems: Windows, Mac OS and LINUX </li>
+	<li> Databases: Microsoft SQL </li>
+	<li> Knowledge of various data structures and algorithms and their implementations </li>
+</ul>
+</div>
+
+<div id = "Work Experience" class= "tabcontent"  style= "background-color: white">
+<h1 align="center"> PROFESSIONAL EXPERIENCE </h1>
+<h2> IT Technician </h2>
+<h3> Mothercraft, Toronto, ON </h3>
+<h4> June 2018- August 2018 </h4>
+	<ul>
+		<li> Independently created company database on Microsoft SQL Server with Java GUI application to organize company directory and inventory </li>
+		<li> Delivered troubleshooting solutions to departments and console operators experiencing difficulties with software, hardware, and network connectivity. </li>
+		<li> Set up all employee workstations through hardware imaging and manual installations Effectively resolved all software and hardware related problems to all staff in all 5 building locations </li>
+		<li>Maintained and up kept company servers and followed appropriate protocols when servers were down</li>
+		<li>Updated company active directory on Microsoft Exchange and maintained all directories and provided appropriate access to new, current and terminated employees </li>
+</ul>
+<h2> Software Validation Technician (Co-op) </h2>
+<h3>ITC Systems, North York, ON	</h3>							
+<h4> June 2017 – Jan 2018 </h4>
+	<ul>
+		<li> Ensured that software and hardware worked seamlessly by working closely with the hardware department through communicating with Basecamp </li>
+		<li> Debugged the system which allowed the company to be back on schedule after falling 12 months behind launch schedule </li>
+		<li> Maintained and created Microsoft SQL databases for software connection with the implementation of C++ and Xml software, using Visual Studio </li>
+		<li> Worked independently to analyze and document testing requirements of application under test so that appropriate testing solutions can be implemented </li>
+		<li> Created and maintained virtual machines, in order to create multiple testing environments </li>
+		<li> Used excellent problem-solving skills when developing and maintaining all QA and testing specific documentation and manuals and reported bugs through JIRA and TFS </li>
+	</ul>
+
+<h2> Junior Programmer </h2>
+<h3>Drill-o, Brampton, ON </h3>							
+<h4>	Jan 2017 – present </h4>
+	<ul>
+		<li> Implemented models for previously created systems in C and .NET FRAMEWORK under the supervision of the Senior Programmer. </li>
+		<li> Created, modified and maintained SQL relational data base table, in relation to new updates to the </li>
+		<li> Provided new and innovative technological updates to projects to integrated well with the new age of technology </li>
+		<li> Prepare flowcharts and organize a structure for the data defining the program code as per the software needs </li>
+		<li> Created effective test plans and quality parameters in order to validate programs to perform at most effective capacity </li>
+	</ul>
+
+<h2>Client Relations Advisor </h2>
+<h3> CARSTAR Head Office, Hamilton, ON	</h3>							 
+<h4>Sept 2016 – present </h4>
+	<ul>
+
+	<li> Provide sound advice at every customer interaction, contributing to a legendary customer experience </li>
+	<li> Meet the needs of customers by offering advice based on their total financial situation and possessing a thorough knowledge of customer life cycle needs </li>
+	<li> Contributed toward the achievement of branch business objectives by exceeding hourly call goals by 20 calls per hour </li>
+	<li> Ensure necessary due diligence is taken to support the accuracy of all customer transactions</li>
+	</ul>
+</div>
+
+<div id = "Volunteer Experience" class="tabcontent"  style= "background-color: white">
+<h1 align="center"> VOLUNTEER EXPERIENCE </h1> 
+						
+<h2> Communication Chair </h2>					
+<h3>National Society of Black Engineers : McMaster,Hamilton, ON	</h3>	
+<h4> April 2016 – present </h4>
+	<ul>
+		<li> Take the lead on the marketing and communications for NSBEMac, ensuring that the mission and goals of NSBE are met. </li>
+		<li> Leverage and manage social media tools such as NSBE McMaster’s main website, Twitter accounts, and Facebook </li>
+		<li>Contribute expertise to assist other team members to increase attendees and club members to NSBE organized events </li>
+		<li> Contributed in organized NSBE event THE HUNT, especially in promotions, which brought hundreds of students gain knowledge in this large networking event </li>
+	</ul>
+</div>
+<script>
+function openOption(evt, option) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(option).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+</body>
+</html>
+	
+
+
+
+
