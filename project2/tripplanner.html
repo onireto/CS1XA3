@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Trip Planner</title>
+	<style>
+	h1, h2,h3,form {font-family: "Optima", sans-serif}
+	h1, h2,h3,form {color:#FFFFFF;}
+	form {font-weight : 900;}
+
+	input[type = text], input[type=date], input[type=number], select{
+		border : 2px solid white;
+		border-radius: 4px;
+		background-color: black;
+		color:white;
+		font-family:"Optima",sans-serif;
+
+	}
+	.bg-image {
+		background-image: url("vacay.jpg");
+		height:100%;
+		background-repeat: no-repeat;
+		background-size: cover;
+		filter: blur(8px);
+		-webkit-filter : blur(8px);
+		
+	}
+	.blur{
+		background-color:  rgba(31, 34, 118, 0.5);
+		height: 100%;
+
+		
+	}
+	
+
+
+
+</style>
+</head>
+<body background ="vacay2.jpg" align="center">
+	<h1 align="center"; style = 'font-size: 100px' style> TRIP PLANNER </h1>
+	<form id = "infoForm" align ="center"; style = 'font-size: 20px' >
+		Where are you going? <input type="text" name="location" value ="Enter Location"> <br>
+		When are you going? <input type="date" name="departure"><br>
+		When are you returning? <input type="date" name="return"><br>
+		Whats your budget? <input type="number" name="budget"><br>
+		How often to save? <select name ="iterate">
+			<option value ="Please select">Select</option>
+			<option value ="1 week">Once</option>
+			<option value ="2 weeks">Twice</option>
+			<option value ="3 weeks">Three</option>
+			<option value ="4 weeks">Four</option>
+		</select><br>
+
+		<input type ="submit" onclick ="myfunction(); return false;">  <br>
+	
+		
+	</form>
+	<h1 id ="loc" align="center"; style ='font-size: 50px'></h1>
+	<h1 id ="dat" align="center";></h1>
+	<h1 id ="today" align="center";></h1>
+	<h2 id ="done" align="center";></h2>
+	<h3 id ="error" align="center";></h3>
+	<h3 id = "budgeterror" align="center";></h3>
+
+	<script>
+		
+		function myfunction(){
+			
+			var form = document.forms["infoForm"];
+			var lname = form.elements["location"].value;
+			var date = form.elements["departure"].value;
+			var rdate = form.elements["return"].value;
+			var iter = form.elements["iterate"];
+			var budget = form.elements["budget"].value;
+
+			var weeks = iter.options[iter.selectedIndex].value;
+			var input = iteration(weeks);
+
+			var d= date.split("-");
+			var day = parseInt(d[2], 10);
+			var month = parseInt(d[1],10);
+			var year = parseInt(d[0],10);
+
+			var today = new Date();
+			var dd = parseInt(today.getDate(),10);
+			var dm = parseInt(today.getMonth()+1,10);
+			var dy = parseInt(today.getFullYear(),10);
+			var ddays = totalDays(year, month, day);
+			var td = totalDays(dy, dm, dd);
+			var total= (ddays-14) - td;
+			if (total < 0){
+				document.getElementById("error").innerHTML = "Seems like your trip is too soon!";
+				document.getElementById("budgeterror").innerHTML = "Total due: $ " +  budget ;
+			}
+			else if (total < (input*7)){
+				document.getElementById("error").innerHTML = "Seems like theres not enough days for  the iteration! Please chose another iteration!";
+				document.getElementById("budgeterror").innerHTML = "Total due: $ " + budget;
+			}
+
+			else{
+				document.getElementById("loc").innerHTML  = lname;
+				document.getElementById("dat").innerHTML = date +" to " + rdate;
+				document.getElementById("done").innerHTML = "Enjoy your Trip!";
+				createTable(total, input, budget);
+			
+			}
+			function createTable(days, iterate, budget){
+				var week_amount;
+				var weeks =parseInt((days/(iterate * 7)),10);
+				week_amount = parseFloat(budget/weeks).toFixed( 2 ) ;
+				var bod = document.body, 
+				tbl = document.createElement('table');
+				tbl.style.width = '200px';
+				var first_row = tbl.insertRow();
+				var cell1 = first_row.insertCell(0);
+				var cell2 = first_row.insertCell(1);
+				cell1.appendChild(document.createTextNode('Weeks'));
+				cell1.style.border = '2px solid white';
+				cell1.style.color='white';
+				cell2.appendChild(document.createTextNode('Save'));
+				cell2.style.border = '2px solid white';
+				cell2.style.color ='white';
+
+
+				tbl.style.border = '2px solid white';
+				for (var i = 0; i<weeks; i++){
+					var tr  = tbl.insertRow();
+					for (var j =0 ; j<2;j++){
+						if(i==weeks && j==1){
+							break;
+						}
+						else{
+							if (j == 0){
+								var td = tr.insertCell();
+								td.appendChild(document.createTextNode("Week " + (((i+1)*iterate)-(iterate-1))));
+								td.style.border = '2px solid white';
+								td.style.color = 'white';
+								td.style.margin = "100px";
+								td.style.fontSize = "40px";
+							}
+							else if(j==1){
+								var td = tr.insertCell();
+								td.appendChild(document.createTextNode("$" + week_amount));
+								td.style.border = '2px solid white';
+								td.style.color = 'white';
+								td.style.margin = "100px";
+								td.style.fontSize = "40px";
+							}
+						}
+					}
+				}
+				tbl.style.marginLeft ="auto";
+				tbl.style.marginRight="auto";
+				bod.appendChild(tbl);
+				
+
+
+			}
+			function iteration(iter){
+			var itera;
+			if(iter =="1 week"){
+				itera= 1;
+			}
+			else if (iter=="2 weeks"){
+				itera = 2;
+			}
+			else if (iter =="3 weeks"){
+				itera =3;
+			}
+			else if(iter == "4 weeks"){
+				itera =4;
+			}
+			return parseInt(itera,10);
+		}
+
+			function totalDays(year, month, days){
+			var tDays = days; 
+			for(var i=1; i<month; i++){
+				if (i==3 && year%4==0){//checks if leap year
+					tDays+=29;
+				}
+				else if(i==3 && year%4!=0){
+					tDays += 28;
+				}
+				else if(i<8){
+					if (i %2==1){
+						tDays+=31;
+					}
+					else{
+						tDays+=30;
+					}
+
+				}
+				else{
+					if(i%2==0){
+						tDays+=31;
+					}
+					else{
+						tDays+=30;
+					}
+				}
+			}
+			var leapdays = ((year-1)/4)*366;
+			var non_leap_days= ((year-1)-((year-1)/4))*365;
+			tDays+=leapdays+non_leap_days; // total days today
+			return parseInt(tDays,10);
+
+			}
+		}
+		
+	</script>
+</body>
+</html>
